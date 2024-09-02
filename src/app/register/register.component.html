@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<section class="register-block">
+    <div class="container">
+        <div class="row ">
+            <div class="col register-sec">
+                <h2 class="text-center">Register Now</h2>
+                <form class="register-form" action="" #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-uppercase">Name</label>
+
+                        <input type="text" class="form-control" name="name" id="" [(ngModel)]="registerform.username" #name="ngModel" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-uppercase">Password</label>
+
+                        <input type="password" name="password" class="form-control" id="" [(ngModel)]="registerform.password" #password="ngModel" required minlength="8">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Nickname</label>
+                        <input type="text" name="nickname" class="form-control" id="" [(ngModel)]="registerform.nickName" #nickname="ngModel" required>
+
+                    </div>
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-login float-right" value="Register">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        Already have account ? Please <a href="javascript:void(0);" routerLink="/">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

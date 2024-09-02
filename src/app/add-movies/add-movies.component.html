@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-dark navibar">
+    <a class="navbar-brand" href="" routerLink="/admin">MovieSNow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="" routerLink="/viewmovies" class="nav-link">View movies</a></li>
+            <li class="nav-item"><a href="" routerLink="/addmovies" class="nav-link">Add movies</a></li>
+            <li><a class="nav-link" (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-success">
+            <h3>Add Movies</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="movieForm" (ngSubmit)="AddMovie()">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <label>Movie name:</label>
+                        <input type="text" name="moviename" id="" class="form-control" placeholder="movie name" formControlName="movieName">
+                    </div>
+                    <div class="col-md-6 col-sm-12" formArrayName="theatreDetails">
+                        <div class="row">
+                            <div *ngFor="let theatre of movieFormGroups.controls; let i= index" formGroupName="{{i}}">
+                                <input type="text" name="theatreName" class="form-control" id="" placeholder="theatre name" formControlName="theatreName">
+                                <input type="text" name="ticketPrice" class="form-control" id="" placeholder="ticket price" formControlName="ticketPrice">
+                                <button class="btn btn-success rounded-circle" (click)="addTheatre()">+</button>&nbsp;&nbsp;
+                                <button class="btn btn-danger rounded-circle" (click)="removeTheatre(i)">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="description">Description :</label>
+                        <textarea name="description" placeholder="some description" id="description" class="form-control" cols="30" rows="10" formControlName="description"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-success" type="submit" [disabled]="!movieForm.valid">Add Movie</button>
+            </form>
+        </div>
+    </div>
+</div>

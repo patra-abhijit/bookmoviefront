@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-md navbar-dark navibar">
+    <a class="navbar-brand" routerLink="#">MovieSNow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a routerLink="/viewmovies" class="nav-link">View movies</a></li>
+            <li class="nav-item"><a routerLink="/addmovies" class="nav-link">Add movies</a></li>
+            <li><a class="nav-link" (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 mt-4 offset-1 slidebar">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block rounded" src="../assets/mov1.jpg" alt="1st slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block " src="../assets/mov2.jpg" alt="2nd slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block" src="../assets/mov3.jpg" alt="3rd slide">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block" src="../assets/mov5.jpg" alt="5th slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block" src="../assets/mov6.jpg" alt="6th slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container mt-5">
+            <h2 class="text-center fonts">movie</h2>
+            <div class="row justify-content-center">
+                <div class="card movie_card">
+                    <img src="../assets/spidy.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://youtu.be/Nt9L1jCKGnE"><i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+            </i></a>
+                        <h5 class="card-title">Spider-Man: Far From Home</h5>
+                        <span class="movie_info">2019</span>
+                        <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+                    </div>
+                </div>
+
+                <div class="card movie_card">
+                    <img src="../assets/alita.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://youtu.be/w7pYhpJaJW8"><i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+            </i></a>
+                        <h5 class="card-title">Alita: Battle Angel</h5>
+                        <span class="movie_info">2019</span>
+                        <span class="movie_info float-right"><a href=""><i class="fas fa-star"></i></a> 9 / 10</span>
+                    </div>
+                </div>
+
+                <div class="card movie_card">
+                    <img src="../assets/spidyverse.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://youtu.be/shW9i6k8cB0"><i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+            </i></a>
+                        <h5 class="card-title">Spider-Man: Into the Spider-Verse</h5>
+                        <span class="movie_info">2019</span>
+                        <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <script>
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+
+    </div>
+</div>

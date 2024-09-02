@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-info">
+    <a class="navbar-brand" href="" routerLink="#">MovieSNow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+  
+          <li class="nav-item"><a href="" routerLink="/userdashboard" class="nav-link">home</a></li>
+          <li class="nav-item"><a href="" routerLink="/usermovie" class="nav-link">View movies</a></li>
+          <li class="nav-item"><a href="" routerLink="/mybooking" class="nav-link">my bookings</a></li>        
+          <li><a class="nav-link" (click)="logout()">Logout</a></li>
+  
+  
+      </ul>
+  
+    </div>
+  </nav>
+  <button class="float-right mt-3 mr-2 rounded btn btn-success" (click)="reload()">refresh</button>
+  <main role="main" class="container-fluid mt-5">
+    <div class="container-fluid">
+      <div class="mt-5">
+        <table class="table table-striped text-center">
+          <thead class="thead navibar">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">TheatreDetails
+            <tr class="text-justify">
+              <th>Theatre name</th>
+              <th>Ticket price</th>
+              <th>Seats</th>
+            </tr>
+            </th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let movie of movieData" class="">
+            <tr>
+              <a (click)="routeParam(movie.movieId,movie.movieName)"><th scope="row">{{movie.movieId}}</th></a>
+              <td><b>{{movie.movieName}}</b></td>
+              <td class="text-justify">{{movie.description}}</td>
+              <td>
+                <div *ngFor="let theatre of movie.theatreDetails">
+              <td class="text-justify">{{theatre.theatreName}} </td>
+              <td class="text-justify">{{theatre.ticketPrice}}</td>
+              <td class="text-justify">{{theatre.availableSeats}}/{{theatre.theatreCapacity}}</td>
+  
+      </div>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+    </div>
+  </main>

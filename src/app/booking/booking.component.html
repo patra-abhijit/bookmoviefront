@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-info">
+    <a class="navbar-brand" href="" routerLink="#">MovieSNow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item"><a href="" routerLink="/userdashboard" class="nav-link">home</a></li>
+            <li class="nav-item"><a href="" routerLink="/usermovie" class="nav-link">view movies</a></li>
+            <li class="nav-item"><a href="" routerLink="/mybooking" class="nav-link">my bookings</a></li>
+            <li><a class="nav-link" (click)="logout()">Logout</a></li>
+
+
+        </ul>
+
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <h1>Booking</h1>
+    </div>
+    <form [formGroup]="ticketForm" (ngSubmit)="Book()">
+        <div class="row">
+            <label for="">Name :</label>
+            <input type="text" formControlName="username" required/>
+        </div>
+        <div class="row">
+            <label for="">MovieId :</label>
+            <label for="" formControlName="movie_id_fk">{{moviedata.movieId}}</label>
+        </div>
+        <label for="">Select your theatre :</label>
+        <div class="row">
+            <select name="" id="" formControlName="theatre">
+            <option *ngFor="let theatre of moviedata.theatreDetails">{{theatre.theatreName}}</option>
+        </select>
+            <!-- <input type="text" name="theatre" id="" formControlName="theatre" placeholder="theatre"> -->
+        </div>
+        <div class="row">
+            <label for="">seats :</label>
+            <input type="number" name="seats" id="" formControlName="bookedSeats" />
+        </div>
+        <div class="row">
+            <button class="btn btn-success" [disabled]="!ticketForm.valid">Book</button>
+        </div>
+    </form>
+</div>

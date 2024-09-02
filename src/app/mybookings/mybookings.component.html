@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-info">
+    <a class="navbar-brand" href="" routerLink="#">MovieSNow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+  
+          <li class="nav-item"><a href="" routerLink="/userdashboard" class="nav-link">home</a></li>
+          <li class="nav-item"><a href="" routerLink="/usermovie" class="nav-link">View movies</a></li>
+          <li class="nav-item"><a href="" routerLink="/mybooking" class="nav-link">my bookings</a></li>
+          <li><a class="nav-link" (click)="logout()">Logout</a></li>
+  
+  
+      </ul>
+  
+    </div>
+  </nav>
+<div class="container">
+    <button class="float-right mt-3 mr-2 rounded btn btn-success" (click)="reload()">refresh</button>
+    <div class="row">
+            <div class="card mt-5 ml-5" style="width: 18rem;border: 1px solid black;background-color: rgba(0, 0, 0, 0.308);box-shadow: inset;"
+                *ngFor="let bookings of myBookings;let i=index">
+                <div class="card-body">
+                    <h5 class="card-title">Booking {{i+1}}</h5>
+                    <h6 class="card-subtitle mb-2 text-success">Movie Id #{{bookings.movie_id_fk}}</h6>
+                    <h6 class="card-subtitle mb-2 text-warning">Movie name :{{bookings.moviename}}</h6>
+                    <p class="card-text">
+                        Theatre : {{bookings.theatre}}<br>Issued At : {{bookings.issuedAt}}<br>Seats booked : {{bookings.bookedSeats}}
+                    </p>
+                    <button class="card-link btn btn-danger" (click)="deletebooking(bookings.transactionId)">Delete booking</button>
+                </div>
+            </div>
+    </div>
+</div>

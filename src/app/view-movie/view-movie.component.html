@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-md navbar-dark navibar">
+  <a class="navbar-brand" href="" routerLink="/admin">MovieSNow</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a href="" routerLink="/viewmovies" class="nav-link">View movies</a></li>
+      <li class="nav-item"><a href="" routerLink="/addmovies" class="nav-link">Add movies</a></li>
+      <li><a class="nav-link" (click)="logout()">Logout</a></li>
+    </ul>
+
+  </div>
+</nav>
+<button class="float-right mt-3 mr-2 rounded btn btn-success" (click)="reload()">refresh</button>
+<main role="main" class="container-fluid mt-5">
+  <div class="container-fluid">
+    <div class="mt-5">
+      <h3>Welcome admin</h3>
+      <table class="table table-striped text-center">
+        <thead class="thead navibar">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">TheatreDetails
+          <tr>
+            <th>Theatre name</th>
+            <th>Ticket price</th>
+            <th>Seats</th>
+          </tr>
+          </th>
+          <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let movie of movieData">
+          <tr>
+            <th scope="row">{{movie.movieId}}</th>
+            <td><b>{{movie.movieName}}</b></td>
+            <td class="text-justify">{{movie.description}}</td>
+            <td>
+              <div *ngFor="let theatre of movie.theatreDetails">
+            <td>{{theatre.theatreName}} </td>
+            <td>{{theatre.ticketPrice}}</td>
+            <td>{{theatre.availableSeats}}/{{theatre.theatreCapacity}}</td>
+
+    </div>
+    </td>
+    <td><button class="btn btn-danger" (click)="doDelete(movie.movieId)">delete</button></td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+  </div>
+</main>
+<div class="container">
+
+</div>
